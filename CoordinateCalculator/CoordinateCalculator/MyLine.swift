@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MyLine : Linable {
+struct MyLine : TwoDimensionable {
     
     private (set) var pointA: MyPoint = MyPoint()
     private (set) var pointB: MyPoint = MyPoint()
@@ -20,7 +20,7 @@ struct MyLine : Linable {
         }
     }
     
-    mutating func setDistance(){
+    private mutating func setDistance(){
         let xDistance = pointA.x - pointB.x
         let yDistance = pointA.y - pointB.y
         let distance = sqrt(Double ((xDistance * xDistance) + (yDistance * yDistance)))

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MyTriangle : Trianglable {
+struct MyTriangle : TwoDimensionable {
     
     private (set) var lineAB = MyLine(pointA: MyPoint(), pointB: MyPoint())
     private (set) var lineBC = MyLine(pointA: MyPoint(), pointB: MyPoint())
@@ -20,7 +20,7 @@ struct MyTriangle : Trianglable {
         }
     }
     
-    mutating func setArea() {
+    private mutating func setArea() {
         self._area = (1/2 * lineBC.shapeInformation * lineCA.shapeInformation * getMySineThetaC()).rounded(.toNearestOrAwayFromZero)
     }
 
